@@ -1,0 +1,22 @@
+{
+  "name": "personal-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write .",
+    "test": "turbo run test"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "prettier": "^2.3.2",
+    "turbo": "^1.0.0",
+    "typescript": "^4.3.5"
+  }
+}

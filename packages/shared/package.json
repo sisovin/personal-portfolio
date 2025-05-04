@@ -1,0 +1,23 @@
+{
+  "name": "@personal-portfolio/shared",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rimraf dist",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@types/node": "^14.14.41",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "eslint": "^7.26.0",
+    "jest": "^26.6.3",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.2.4"
+  }
+}

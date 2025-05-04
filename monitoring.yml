@@ -1,0 +1,59 @@
+# Monitoring and Error Tracking Configuration
+
+version: '3.8'
+
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - '9090:9090'
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - '3000:3000'
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+
+  alertmanager:
+    image: prom/alertmanager:latest
+    volumes:
+      - ./alertmanager.yml:/etc/alertmanager/alertmanager.yml
+    ports:
+      - '9093:9093'
+
+  backend:
+    build:
+      context: ./apps/backend
+      dockerfile: Dockerfile.backend
+    ports:
+      - '3001:3000'
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5432/mydb
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./apps/frontend
+      dockerfile: Dockerfile.frontend
+    ports:
+      - '3000:3000'
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydb
+    ports:
+      - '5432:5432'
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:

@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+:root {
+  --color-primary: #1DA1F2;
+  --color-secondary: #14171A;
+  --color-accent: #657786;
+  --color-background: #F5F8FA;
+  --color-surface: #FFFFFF;
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Merriweather', serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-secondary);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+p {
+  margin: 0 0 1em 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+button {
+  font-family: var(--font-sans);
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darken(var(--color-primary), 10%);
+}
+
+.dark-mode {
+  --color-background: #14171A;
+  --color-surface: #657786;
+  --color-secondary: #F5F8FA;
+}
