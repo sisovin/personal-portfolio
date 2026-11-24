@@ -15,10 +15,10 @@
     "react-dom": "latest"
   },
   "devDependencies": {
-    "typescript": "latest",
-    "@types/react": "latest",
     "@types/node": "latest",
+    "@types/react": "latest",
     "eslint": "latest",
-    "prettier": "latest"
+    "prettier": "latest",
+    "typescript": "5.9.3"
   }
 }

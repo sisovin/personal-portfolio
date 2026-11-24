@@ -9,11 +9,13 @@ export interface User {
 export interface UserProfile {
   id: number;
   email: string;
-  name: string;
-  bio: string;
-  avatarUrl: string;
   createdAt: Date;
   updatedAt: Date;
+}
+
+export enum Role {
+  Admin = 'admin',
+  User = 'user',
 }
 
 export interface UserCredentials {

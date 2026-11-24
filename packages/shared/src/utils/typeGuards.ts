@@ -1,3 +1,7 @@
+import type { BlogPost } from '../types/blog';
+import type { Project } from '../types/project';
+import type { User } from '../types/user';
+
 export function isUser(obj: any): obj is User {
   return (
     typeof obj === 'object' &&
